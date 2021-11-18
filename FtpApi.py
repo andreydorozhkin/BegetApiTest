@@ -21,13 +21,15 @@ def add_ftp_access(suffix, homedir, password):
     params = post_auth_and_format.copy()
     params['input_data'] = json.dumps(inp_data_dict)
     ftp_status = requests.get(command, params=params)
-    print(ftp_status.json())
     return ftp_status
 
 
-
-# ftp_list = get_list()
-# for i in ftp_list:
-#    print(i['login'])
+def change_password(suffix, password):
+    command = site + "changePassword"
+    inp_data_dict = {'suffix': suffix, 'password': password}
+    params = post_auth_and_format.copy()
+    params['input_data'] = json.dumps(inp_data_dict)
+    ch_pass = requests.get(command, params=params)
+    return ch_pass
 
 
