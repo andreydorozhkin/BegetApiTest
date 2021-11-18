@@ -26,8 +26,3 @@ def add_ftp_access(suffix, homedir, password):
 
 
 
-# ftp_list = get_list()
-# for i in ftp_list:
-#    print(i['login'])
-
-
