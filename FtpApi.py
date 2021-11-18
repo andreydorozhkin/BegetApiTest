@@ -7,11 +7,6 @@ get_auth_and_format = {'output_format': 'json', 'passwd': 'R2dONbctqg', 'login':
 post_auth_and_format = {'login': 'vhostbg2', 'passwd': 'R2dONbctqg', 'input_format': 'json', 'output_format': 'json'}
 
 
-def print_json(obj):
-    text = json.dumps(obj, sort_keys=True, indent=4)
-    print(text)
-
-
 def get_list():
     command = site + "getList"
     ftp_list_response = requests.get(
@@ -29,8 +24,6 @@ def add_ftp_access(suffix, homedir, password):
     print(ftp_status.json())
     return ftp_status
 
-
-add_ftp_access("testapicode", "/test_for_code_api/public_html", "Qwerty123")
 
 
 # ftp_list = get_list()
