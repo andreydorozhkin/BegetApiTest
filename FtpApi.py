@@ -4,7 +4,7 @@ import json
 
 site = "https://api.beget.com/api/ftp/"
 get_auth_and_format = {'output_format': 'json', 'passwd': 'R2dONbctqg', 'login': 'vhostbg2'}
-post_auth_and_format = {'login': 'vhostbg2', 'passwd': 'R2dONbctqg', 'output_format': 'json', 'input_format': 'json'}
+post_auth_and_format = {'login': 'vhostbg2', 'passwd': 'R2dONbctqg', 'input_format': 'json', 'output_format': 'json'}
 
 
 def print_json(obj):
@@ -24,11 +24,10 @@ def add_ftp_access(suffix, homedir, password):
     command = site + "add"
     inp_data_dict = {'suffix': suffix, "homedir": homedir, "password": password}
     params = post_auth_and_format.copy()
-    params['input_data'] = inp_data_dict
-    print(params)
-    # ftp_status = requests.get(command, params=post_auth_and_format)
-    # print(ftp_status.request.url)
-    # return ftp_status
+    params['input_data'] = json.dumps(inp_data_dict)
+    ftp_status = requests.get(command, params=params)
+    print(ftp_status.json())
+    return ftp_status
 
 
 add_ftp_access("testapicode", "/test_for_code_api/public_html", "Qwerty123")
