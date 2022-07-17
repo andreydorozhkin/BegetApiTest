@@ -7,7 +7,7 @@ account = "https://api.beget.com/api/user/"
 def get_account_info():
     print(type(account))
     account_link_api = account + "getAccountInfo"
-    auth_and_format = {'output_format': 'json', 'passwd': 'R2dONbctqg', 'login': 'vhostbg2'}
+    auth_and_format = {'output_format': 'json', 'passwd': $PASSWD, 'login': $LOGIN}
     response = requests.get(account_link_api, params=auth_and_format)
     return response.json()
 
