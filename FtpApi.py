@@ -4,8 +4,8 @@ import json
 # TODO как-то скрыть авторизацию
 
 site = "https://api.beget.com/api/ftp/"
-get_auth_and_format = {'output_format': 'json', 'passwd': 'R2dONbctqg', 'login': 'vhostbg2'}
-post_auth_and_format = {'login': 'vhostbg2', 'passwd': 'R2dONbctqg', 'input_format': 'json', 'output_format': 'json'}
+get_auth_and_format = {'output_format': 'json', 'passwd': $PASSWD, 'login': $LOGIN}
+post_auth_and_format = {'login': $LOGIN, 'passwd': $PASSWD, 'input_format': 'json', 'output_format': 'json'}
 
 # TODO изменить формат возврата функции get_list
 # Получить список фтп доступов
